@@ -1,1 +1,1 @@
-Akos Maurer-Somogyi(mrakosms)' workshop tasks
+Akos Maurer-Somogyi(mrakosms)'s workshop tasks
