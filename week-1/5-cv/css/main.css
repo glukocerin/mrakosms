@@ -3,8 +3,6 @@
   src: url('../fonts/MATRIX.ttf')  format('truetype');
 }
 
-
-
 body {
   background-color: #000;
   color: #fff;
@@ -21,7 +19,6 @@ li {
   list-style: none;
 }
 
-
 blockquote {
   display: block;
   background: #333;
@@ -32,6 +29,7 @@ blockquote {
 
 blockquote::before {
     content: "\201C";
+    font-size: 30px;
 }
 
 cite {
@@ -67,13 +65,20 @@ h2 {
   font-family: Matrix;
 }
 
-
 .end {
   text-align: center;
+}
+
+.pause {
+  height: 150px;
 }
 
 .pill {
   max-width: 200px;
   padding: 10px;
   width: 40%;
+}
+
+#thx {
+  font-size: 36px;
 }
