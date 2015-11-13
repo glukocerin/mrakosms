@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Matrix';
+  src: url('../fonts/MATRIX.ttf')  format('truetype');
+}
+
+
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Droid Sans Mono' sans-serif;
+  margin:0;
+  line-height: 1.5;
+}
+
+.clear {
+  clear: both;
+}
+
+li {
+  list-style: none;
+}
+
+
+blockquote {
+  display: block;
+  background: #333;
+  padding: 15px 20px 25px 45px;
+  margin: 0 0 20px;
+  position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+}
+
+cite {
+  float: right;
+  font-size: 80%;
+  font-style: italic;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+header {
+  color: #a1a1a1;
+  background-image: url(../img/header.gif);
+  background-position: center center;
+  background-size: cover;
+  font-family: Matrix;
+  padding: 100px 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 46px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: Matrix;
+}
+
+
+.end {
+  text-align: center;
+}
+
+.pill {
+  max-width: 200px;
+  padding: 10px;
+  width: 40%;
+}
