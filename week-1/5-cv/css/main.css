@@ -85,6 +85,13 @@ cite {
   width: 50%;
 }
 
+/* hue-rotate not working
+.pill.manipulate {
+  filter: hue-rotate(180deg);;
+  -webkit-filter: hue-rotate(180deg);
+}
+*/
+
 .thx {
   font-size: 36px;
 }
