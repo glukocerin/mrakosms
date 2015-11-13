@@ -11,38 +11,6 @@ body {
   line-height: 1.5;
 }
 
-.clear {
-  clear: both;
-}
-
-li {
-  list-style: none;
-}
-
-blockquote {
-  display: block;
-  background: #333;
-  padding: 15px 20px 25px 45px;
-  margin: 0 0 20px;
-  position: relative;
-}
-
-blockquote::before {
-    content: "\201C";
-    font-size: 30px;
-}
-
-cite {
-  float: right;
-  font-size: 80%;
-  font-style: italic;
-}
-
-.wrap {
-  margin: 0 auto;
-  max-width: 600px;
-}
-
 header {
   color: #a1a1a1;
   background-image: url(../img/header.gif);
@@ -65,6 +33,38 @@ h2 {
   font-family: Matrix;
 }
 
+li {
+  list-style: none;
+}
+
+blockquote::before {
+    content: "\201C";
+    font-size: 30px;
+}
+
+blockquote {
+  display: block;
+  background: #333;
+  padding: 15px 20px 25px 45px;
+  margin: 0 0 20px;
+  position: relative;
+}
+
+cite {
+  float: right;
+  font-size: 80%;
+  font-style: italic;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.clear {
+  clear: both;
+}
+
 .end {
   text-align: center;
 }
@@ -79,6 +79,6 @@ h2 {
   width: 40%;
 }
 
-#thx {
+.thx {
   font-size: 36px;
 }
