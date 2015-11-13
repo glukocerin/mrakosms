@@ -70,7 +70,7 @@ cite {
 }
 
 .pause {
-  height: 150px;
+  height: 50px;
 }
 
 .pill {
@@ -85,12 +85,19 @@ cite {
   width: 50%;
 }
 
-/* hue-rotate not working
-.pill.manipulate {
+.manipulate {
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  /*
   filter: hue-rotate(180deg);;
   -webkit-filter: hue-rotate(180deg);
+  */
 }
-*/
+
+.manipulate:hover {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
 
 .thx {
   font-size: 36px;
