@@ -99,6 +99,30 @@ cite {
   -webkit-filter: blur(0px);
 }
 
-.thx {
-  font-size: 36px;
+.follow-rabbit {
+  width: 200px;
+  height: auto;
+}
+
+.social {
+  text-align: center;
+}
+
+.follow {
+  display: inline-block;
+  height: 50px;
+  margin: 5px;
+  width: 50px;
+}
+
+.rabbit {
+  background: transparent url('../img/rabbit.jpg') no-repeat center;
+}
+
+.fb {
+  background: transparent url('../img/fb.png') no-repeat center;
+}
+
+.linkedin {
+  background: transparent url('../img/linkedin.png') no-repeat center;
 }
