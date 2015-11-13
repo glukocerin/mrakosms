@@ -16,7 +16,6 @@ header {
   background-image: url(../img/header.gif);
   background-position: center center;
   background-size: cover;
-  font-family: Matrix;
   padding: 100px 20px;
   text-align: center;
 }
@@ -26,6 +25,7 @@ h1 {
 
 h2 {
   font-size: 34px;
+  color: green;
 }
 
 h1,
