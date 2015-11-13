@@ -38,8 +38,8 @@ li {
 }
 
 blockquote::before {
-    content: "\201C";
-    font-size: 30px;
+  content: "\201C";
+  font-size: 30px;
 }
 
 blockquote {
@@ -75,8 +75,14 @@ cite {
 
 .pill {
   max-width: 200px;
+  opacity: 0.6;
   padding: 10px;
   width: 40%;
+}
+
+.pill:hover {
+  max-width: 250px;
+  width: 50%;
 }
 
 .thx {
