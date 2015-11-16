@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.main-container {
+  background: yellow;
+  order: 1;
+  width: 100%;
+}
+
+.main-header {
+  background: red;
+  height: 80px;
+  position: relative;
+}
+
+.main-header ul {
+  display: flex;
+}
+
+.main-header nav,
+.search {
+  position: absolute;
+}
+
+.user-menu {
+  right: 0px;
+  top: 0px;
+}
+
+.user-menu li {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.talk-menu {
+  bottom: 0px;
+  left: 0px;
+}
+
+.edit-menu {
+  bottom: 0px;
+  right: 300px;
+}
+
+.edit-menu li,
+.talk-menu li {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.search {
+  bottom: 0px;
+  padding-bottom: 5px;
+  right: 0px;
+}
+
+.search input {
+  width: 300px;
+}
+
+.biography {
+  background: #f9f9f9;
+  border: 1px solid #aaaaaa;
+  box-sizing: border-box;
+  float: right;
+  margin: 6px 0 12px 12px;
+  padding: 25px;
+  width: 271px;
+}
+
+.main-footer {
+  background: purple;
+  height: 150px;
+}
+
+.main-sidebar {
+  background: aqua;
+  order: 0;
+  width: 176px;
+}
+
+.logo {
+  background-image: url(../img/enwiki.png);
+}
