@@ -1,8 +1,24 @@
 body {
   background: #f6f6f6;
   display: flex;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
   margin: 0;
   min-height: 100vh;
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid #aaa;
+  font-size: 28.8px;
+  font-family: serif;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0;
 }
 
 ul {
@@ -15,13 +31,11 @@ li {
 }
 
 .main-container {
-  background: #ffffff;
   order: 1;
   width: 100%;
 }
 
 .main-header {
-  background: #f6f6f6;
   height: 80px;
   position: relative;
 }
@@ -47,12 +61,12 @@ li {
 
 .talk-menu {
   bottom: 0px;
-  left: 0px;
+  right: 300px;
 }
 
 .edit-menu {
   bottom: 0px;
-  right: 300px;
+  left: 0px;
 }
 
 .edit-menu li,
@@ -72,6 +86,13 @@ li {
   width: 300px;
 }
 
+.main-content {
+  background: #ffffff;
+  border: 1px solid #a7d7f9;
+  border-right: 0;
+  padding: 16px;
+}
+
 .biography {
   background: #f9f9f9;
   border: 1px solid #aaaaaa;
@@ -83,15 +104,20 @@ li {
 }
 
 .main-footer {
-  background: #f6f6f6;
   height: 150px;
 }
 
 .main-sidebar {
+  flex: 0 0 auto;
   order: 0;
   width: 176px;
 }
 
 .logo {
-  background-image: url(../img/enwiki.png);
+  background: url(../img/logo.png);
+  color: rgba(0, 0, 0, 0);
+  display: block;
+  height: 155px;
+  margin: 6px auto 0;
+  width: 135px;
 }
