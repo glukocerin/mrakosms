@@ -5,6 +5,7 @@
     <title>My Wikipedia</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
   </head>
   <body>
     <div class="main-container">
@@ -27,36 +28,61 @@
       </header>
       <main class="main-content">
         <h1>Create Account</h1>
-        <form class="signup">
-          <label for="username">Username</label><a class="help-link" href="#">(help me choose)</a>
-          <input autofocus autocomplete="off" required type="text" id="username" placeholder="Enter your username" pattern=".{5}|.{6}|.{7}|.{8}|.{9}|.{10}" aria-required="true" aria-describedby="name-format" tabindex="1">
-          <span id="name-format" class="form-help">Please use minimum 5 and maximum 10 characters</span>
-          <label for="password">Password</label>
-          <input required type="password" id="password" placeholder="Enter a password" tabindex="3">
-          <label for="password-confirmation">Confirm password</label>
-          <input required type="password" id="password-confirmation" placeholder="Enter password again" tabindex="2">
-          <label for="email">Email address (optional)</label>
-          <input type="email" id="email" placeholder="Enter your email address" tabindex="4">
-          <p>
-            To edit this page, please enter the words that appear below in the box (<a href="#">more info</a>):
-          </p>
-          <label for="captcha-text">CAPTCHA Security check (Drag the mouse to the white square)</label>
-          <div class="captcha">
-            <div class="captcha-image">
-              <div class="grows">
-                Follow <br>the white rabbit!!!
+        <section>
+          <form class="signup">
+            <label for="username">Username</label><a class="help-link" href="#">(help me choose)</a>
+            <input autofocus autocomplete="off" required type="text" id="username" placeholder="Enter your username" pattern=".{5}|.{6}|.{7}|.{8}|.{9}|.{10}" aria-required="true" aria-describedby="name-format" tabindex="1">
+            <span id="name-format" class="form-help">Please use minimum 5 and maximum 10 characters</span>
+            <label for="password">Password</label>
+            <input required type="password" id="password" placeholder="Enter a password" tabindex="3">
+            <label for="password-confirmation">Confirm password</label>
+            <input required type="password" id="password-confirmation" placeholder="Enter password again" tabindex="2">
+            <label for="email">Email address (optional)</label>
+            <input type="email" id="email" placeholder="Enter your email address" tabindex="4">
+            <p>
+              To edit this page, please enter the words that appear below in the box (<a href="#">more info</a>):
+            </p>
+            <label for="captcha-text">CAPTCHA Security check (Drag the mouse to the white square)</label>
+            <div class="captcha">
+              <div class="captcha-image">
+                <div class="grows">
+                  Follow <br>the white rabbit!!!
+                </div>
               </div>
+              <input type="text" required autocomplete="off" id="captcha-text" placeholder="Enter the text you see above" pattern="Follow the white rabbit!!!" tabindex="5">
+              <small>Can't see the image? <a href="">Request an account</a></small>
             </div>
-            <input type="text" required autocomplete="off" id="captcha-text" placeholder="Enter the text you see above" pattern="Follow the white rabbit!!!" tabindex="5">
-            <small>Can't see the image? <a href="">Request an account</a></small>
-          </div>
-          <button type="submit">Create your account</button>
-        </form>
-        <p>
-          Wikipedia is made by people like you. 799,868,949 edits 5,011,836 articles 127,399 recent contributors
-        </p>
+            <button type="submit">Create your account</button>
+          </form>
+          <section class="statistic">
+            <h2>Wikipedia is made by people like you.</h2>
+            <p>
+              <i class="fa fa-pencil"></i>
+              <h3>799,868,949</h3>
+              <span>edits</span>
+            </p>
+            <p>
+              <i class="fa fa-file-text-o"></i>
+              <h3>5,011,836</h3>
+              <span>articles</span>
+            </p>
+            <p>
+              <i class="fa fa-users"></i>
+              <h3>127,399</h3>
+              <span>recent contributors</span>
+            </p>
+          </section>
+        </section>
       </main>
       <footer class="main-footer">
+        <ul>
+          <li><a href="">Privacy policy</a></li>
+          <li><a href="">About Wikipedia</a></li>
+          <li><a href="">Disclaimers</a></li>
+          <li><a href="">Contact Wikipedia</a></li>
+          <li><a href="">Developers</a></li>
+          <li><a href="">Mobile view</a></li>
+        </ul>
       </footer>
     </div>
     <aside class="main-sidebar">
