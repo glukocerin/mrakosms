@@ -11,6 +11,28 @@
   margin-bottom: 10px;
   width: 100%;
 }
+.captcha {
+  background: #f8f8f8;
+  border: 1px solid #c9c9c9;
+  margin-bottom: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.captcha-image {
+  background: #ffffff;
+  border: 1px solid #c9c9c9;
+  line-height: 1;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.captcha-image small {
+  bottom: 3px;
+  position: absolute;
+  right: 3px;
+}
 
 button {
   background: #00af89;

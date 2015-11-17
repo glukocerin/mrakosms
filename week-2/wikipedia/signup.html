@@ -36,6 +36,19 @@
             <input required type="password" id="password-confirmation" placeholder="Enter password again">
             <label for="email">Email address (optional)</label>
             <input type="email" id="email" placeholder="Enter your email address">
+            <p>
+              To edit this page, please enter the words that appear below in the box (<a href="#">more info</a>):
+            </p>
+            <label for="captcha-text">CAPTCHA Security check</label>
+            <div class="captcha">
+            <div class="captcha-image">
+              <img src="img/captcha.png" alt="Enter the text">
+              <small><a href="#">Reload</a></small>
+            </div>
+            <input type="text" id="captcha-text" placeholder="Enter the text you see above">
+
+            <small>Can't see the image? <a href="">Request an account</a></small>
+            </div>
             <button type="submit">Create your account</button>
         </form>
         <p>
