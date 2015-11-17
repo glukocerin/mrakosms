@@ -113,13 +113,13 @@ button, input {
 }
 
 .search-submit {
-  background: url(../img/search-button.png);
+  background: transparent;
   border: none;
   height: 13px;
   padding: 0;
   position: absolute;
-  right: 5px;
-  top:9px;
+  right: 8px;
+  top:6px;
   width: 12px;
 }
 
