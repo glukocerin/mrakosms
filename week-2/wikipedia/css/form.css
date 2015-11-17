@@ -6,11 +6,21 @@
   float: right;
 }
 
+.form-help {
+    display:none;
+    font-size:90%;
+}
+
+input:focus + .form-help {
+    display:inline-block;
+}
+
 .signup button,
 .signup input {
   margin-bottom: 10px;
   width: 100%;
 }
+
 .captcha {
   background: #f8f8f8;
   border: 1px solid #c9c9c9;
@@ -22,16 +32,35 @@
 .captcha-image {
   background: #ffffff;
   border: 1px solid #c9c9c9;
+  font-size: 0px;
+  height: 60px;
   line-height: 1;
   margin-bottom: 10px;
   padding-bottom: 10px;
   position: relative;
+  overflow: hidden;
 }
 
-.captcha-image small {
-  bottom: 3px;
-  position: absolute;
-  right: 3px;
+@keyframes grow {
+    0% { font-size: 0 }
+    100% { font-size: 30px }
+}
+@-webkit-keyframes grow {
+    0% { font-size: 0 }
+    100% { font-size: 30px }
+}
+.captcha-image:hover .grows {
+  -webkit-animation-name: grow;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+#captcha-text:valid,
+#username:valid {
+  background: rgba(0, 127, 0, 0.5);
 }
 
 button {
