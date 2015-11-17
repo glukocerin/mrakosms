@@ -19,6 +19,7 @@ h2 {
 
 h1 {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 ul {
@@ -82,8 +83,40 @@ li {
   right: 0px;
 }
 
-.search input {
+button, input {
+  box-sizing: border-box;
+  font-family : inherit;
+  font-size: 100%;
+  padding: 5px;
+}
+
+.search-input{
   width: 300px;
+}
+
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-style: italic;
+}
+::-ms-input-placeholder {
+  font-style: italic;
+}
+::placeholder {
+  font-style: italic;
+}
+
+.search-submit {
+  background: url(../img/search-button.png);
+  border: none;
+  height: 13px;
+  padding: 0;
+  position: absolute;
+  right: 5px;
+  top:9px;
+  width: 12px;
 }
 
 .main-content {
