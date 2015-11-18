@@ -1,11 +1,10 @@
 body {
-  background: #f6f6f6;
+  background: linear-gradient(#fff 0%, #f6f6f6 200px);
   display: flex;
   font-family: sans-serif;
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
-  min-height: 100vh;
 }
 
 h1,
@@ -36,10 +35,16 @@ img {
 }
 
 a {
+  color: #0645ad;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: underline;
+}
+
+a:visited {
+  color: #0b0080;
 }
 
 .main-container {
@@ -62,36 +67,54 @@ a:hover {
 }
 
 .user-menu {
-  right: 0px;
+  font-size: 12px;
+  right: 10px;
   top: 0px;
 }
 
-.user-menu li {
-  padding-top: 5px;
-  padding-left: 5px;
+
+.user-menu a,
+.user-menu span {
+  display: block;
+  padding: 5px;
+}
+
+.talk-menu,
+.edit-menu {
+  bottom: 0;
+  font-size: 13px;
 }
 
 .talk-menu {
-  bottom: 0px;
-  right: 300px;
+  right: 310px;
 }
 
 .edit-menu {
-  bottom: 0px;
   left: 0px;
 }
 
-.edit-menu li,
-.talk-menu li {
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+.tab ul {
+  background: linear-gradient(to bottom, transparent 0%, #a7d7f9 100%);
+  padding-left: 1px;
+}
+
+.tab a {
+  background: linear-gradient(to bottom, #fff 0%, #e8f2f8 100%);
+  bottom: -1px;
+  display: block;
+  margin-right: 1px;
+  padding: 15px 5px 5px;
+  position: relative;
+}
+
+.tab .active a {
+  background: #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .search {
-  bottom: 0px;
-  padding-bottom: 5px;
-  right: 0px;
+  bottom: 5px;
+  right: 10px;
 }
 
 button, input {
@@ -101,32 +124,24 @@ button, input {
   padding: 5px;
 }
 
-.search-input{
-  width: 300px;
+.search input {
+  background: linear-gradient(#f6f6f6 0%, #fff 50%);
+  border: 1px solid #ccc;
+  font-size: 13px;
+  outline: none;
+  width: 290px;
 }
 
-
-::-webkit-input-placeholder {
-  font-style: italic;
-}
-::-moz-placeholder {
-  font-style: italic;
-}
-::-ms-input-placeholder {
-  font-style: italic;
-}
-::placeholder {
-  font-style: italic;
-}
 
 .search-submit {
   background: transparent;
   border: none;
+  color: #4d4d4d;
   height: 13px;
   padding: 0;
   position: absolute;
   right: 8px;
-  top:6px;
+  top:4px;
   width: 12px;
 }
 

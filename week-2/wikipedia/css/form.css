@@ -19,18 +19,35 @@ h2 {
   float: right;
 }
 
-.form-help {
-  display:none;
-  font-size:90%;
+
+.signup ::-webkit-input-placeholder {
+  font-style: italic;
+}
+.signup::-moz-placeholder {
+  font-style: italic;
+}
+.signup ::-ms-input-placeholder {
+  font-style: italic;
+}
+.signup ::placeholder {
+  font-style: italic;
 }
 
-input:focus + .form-help {
-  display:inline-block;
+
+
+
+input:focus {
+  box-shadow: inset 0 0 0 2px #347bff;
+  border-color: #347bff;
+  outline: 0;
 }
 
 .signup button,
 .signup input {
+  border: 1px solid #cccccc;
+  border-radius: 2px;
   margin-bottom: 10px;
+  padding: 10px;
   width: 100%;
 }
 
@@ -85,6 +102,7 @@ input:focus + .form-help {
   border-radius:4px;
   color: #fff;
   font-weight: bold;
+  padding: 7px;
   text-shadow: 0 1px rgba(0, 0, 0, 0.1);
 }
 
