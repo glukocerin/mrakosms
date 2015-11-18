@@ -172,24 +172,36 @@ button, input {
 }
 
 .main-sidebar nav {
-  padding: 0 15px 0 30px;
+  padding: 4px 15px 4px 30px;
 }
 
 .main-sidebar h3 {
+  border-top: 1px solid #4d4d4d;
   color: #4d4d4d;
   font-size: 12px;
   font-weight: normal;
+  margin: 0;
+  padding: 6px 0 3px;
 }
 
 .main-sidebar h3 i {
-  font-size: 14px;
-  margin-top: 3px;
+  float: right;
+  font-size: 18px;
+}
+
+.main-sidebar ul {
+  padding-left: 20px;
+}
+
+.main-sidebar .main-menu ul {
+  padding: 0;
 }
 
 .main-sidebar .main-menu {
   padding-top:16px;
 
 }
-.main-sidebar nav h3 i {
-  float: right;
+
+.fa-cog:hover {
+  color: #1a1a1a;
 }
