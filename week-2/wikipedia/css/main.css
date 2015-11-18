@@ -35,6 +35,13 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .main-container {
   order: 1;
   width: 100%;
@@ -142,6 +149,7 @@ button, input {
 
 .main-footer {
   height: 150px;
+  padding: 20px;
 }
 
 .main-sidebar {
@@ -157,4 +165,31 @@ button, input {
   height: 155px;
   margin: 6px auto 0;
   width: 135px;
+}
+
+.main-sidebar {
+  font-size: 12px;
+}
+
+.main-sidebar nav {
+  padding: 0 15px 0 30px;
+}
+
+.main-sidebar h3 {
+  color: #4d4d4d;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.main-sidebar h3 i {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.main-sidebar .main-menu {
+  padding-top:16px;
+
+}
+.main-sidebar nav h3 i {
+  float: right;
 }
