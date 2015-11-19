@@ -23,12 +23,15 @@ h2 {
 .signup ::-webkit-input-placeholder {
   font-style: italic;
 }
+
 .signup::-moz-placeholder {
   font-style: italic;
 }
+
 .signup ::-ms-input-placeholder {
   font-style: italic;
 }
+
 .signup ::placeholder {
   font-style: italic;
 }

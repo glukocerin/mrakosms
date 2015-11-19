@@ -143,7 +143,7 @@ button, input {
 }
 
 .search input[type="search"] {
-  background: url(../img/search.png) no-repeat calc(100% - 5px) center; linear-gradient(#f6f6f6 0%, #fff 50%);
+  background: url(../img/search.png) no-repeat calc(100% - 5px) center, linear-gradient(#f6f6f6 0%, #fff 50%);
   border: 1px solid #ccc;
   font: 13px, sans-serif;
   width: 290px;
@@ -169,7 +169,7 @@ button, input {
   background: #ffffff;
   border: 1px solid #a7d7f9;
   border-right: 0;
-  padding: 20px 24px 24px 24px;
+  padding: 20px 24px 24px;
 }
 
 .biography {
