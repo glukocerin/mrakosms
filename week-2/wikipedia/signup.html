@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Wikipedia</title>
+    <title>FoxPedia</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -13,29 +13,27 @@
         <nav class="user-menu">
           <ul>
             <li>
-              <a href="">Create account</a>
+              <a href="signup.html">Create account</a>
             </li>
             <li>
               <a href="">Log in</a>
             </li>
           </ul>
         </nav>
-        <nav class="edit-menu">
+        <nav class="talk-menu tab">
           <ul>
-            <li>
+            <li class="active">
               <a href="">Special page</a>
             </li>
           </ul>
         </nav>
         <form class="search">
-          <input class="search-input" type="text" placeholder="Search">
-          <button class="search-submit" type="submit" value="">
-            <i class="fa fa-search"></i>
-          </button>
+          <input type="search" placeholder="Search">
+          <input type="submit" class="submit" value="">
         </form>
       </header>
       <main class="main-content">
-        <h1>Create Account</h1>
+        <h1>Create account</h1>
         <section>
           <form class="signup">
             <label for="username">Username</label><a class="help-link" href="#">(help me choose)</a>
@@ -82,62 +80,112 @@
         </section>
       </main>
       <footer class="main-footer">
-        <ul>
-          <li>
-            <a href="">Privacy policy</a>
-          </li>
-          <li>
-            <a href="">About Wikipedia</a>
-          </li>
-          <li>
-            <a href="">Disclaimers</a>
-          </li>
-          <li>
-            <a href="">Contact Wikipedia</a>
-          </li>
-          <li>
-            <a href="">Developers</a>
-          </li>
-          <li>
-            <a href="">Mobile view</a>
-          </li>
-        </ul>
+        <div class="footer-links">
+          <ul class="footer-menu">
+            <li>
+              <a href="">Privacy policy</a>
+            </li>
+            <li>
+              <a href="">About Wikipedia</a>
+            </li>
+            <li>
+              <a href="">Disclaimers</a>
+            </li>
+            <li>
+              <a href="">Contact Wikipedia</a>
+            </li>
+            <li>
+              <a href="">Developers</a>
+            </li>
+            <li>
+              <a href="">Mobile view</a>
+            </li>
+          </ul>
+          <ul class=="copyright">
+            <li>
+              <a href="https://wikimediafoundation.org/">
+                <img src="img/wikimedia-button.png" alt="Wikimedia Foundation" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.mediawiki.org/">
+                <img src="img/poweredby_mediawiki_88x31.png" alt="Powered By MediaWiki" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
     <aside class="main-sidebar">
       <a href="#" class="logo">My Wikipedia</a>
       <nav class="main-menu">
         <ul>
-          <li><a href="">Main page</a></li>
-          <li><a href="">Contents</a></li>
-          <li><a href="">Featured content</a></li>
-          <li><a href="">Current events</a></li>
-          <li><a href="">Random article</a></li>
-          <li><a href="">Donate to Wikipedia</a></li>
-          <li><a href="">Wikipedia store</a></li>
+          <li>
+            <a href="">Main page</a>
+          </li>
+          <li>
+            <a href="">Contents</a>
+          </li>
+          <li>
+            <a href="">Featured content</a>
+          </li>
+          <li>
+            <a href="">Current events</a>
+          </li>
+          <li>
+            <a href="">Random article</a>
+          </li>
+          <li>
+            <a href="">Donate to Wikipedia</a>
+          </li>
+          <li>
+            <a href="">Wikipedia store</a>
+          </li>
         </ul>
       </nav>
       <nav>
-        <h3>Interaction</h3>
+        <div class="topline">
+          <h3>Interaction</h3>
+        </div>
         <ul>
-          <li><a href="">Help</a></li>
-          <li><a href="">About Wikipedia</a></li>
-          <li><a href="">Community portal</a></li>
-          <li><a href="">Recent changes</a></li>
-          <li><a href="">Contact page</a></li>
+          <li>
+            <a href="">Help</a>
+          </li>
+          <li>
+            <a href="">About Wikipedia</a>
+          </li>
+          <li>
+            <a href="">Community portal</a>
+          </li>
+          <li>
+            <a href="">Recent changes</a>
+          </li>
+          <li>
+            <a href="">Contact page</a>
+          </li>
         </ul>
       </nav>
       <nav>
-        <h3>Tools</h3>
+        <div class="topline">
+          <h3>Tools</h3>
+        </div>
         <ul>
-          <li><a href="">Upload file</a></li>
-          <li><a href="">Special pages</a></li>
-          <li><a href="">Printable version</a></li>
+          <li>
+            <a href="">Upload file</a>
+          </li>
+          <li>
+            <a href="">Special pages</a>
+          </li>
+          <li>
+            <a href="">Printable version</a>
+          </li>
 
         </ul>
       </nav>
       <nav>
-        <h3>Languages<i class="fa fa-cog" title="Language settings"></i></h3>
+        <div class="topline">
+          <h3>Languages<i class="fa fa-cog fa-spin" title="Language settings"></i></h3>
+        </div>
       </nav>
     </aside>
   </body>
