@@ -20,3 +20,4 @@ I add some css features that Wikipedia not contain (They use JS)
 - form placeholder italic -> search placeholder normal
 - captcha input autocomplete off
 - language cog icon have hover, and title
+- jump link to references
