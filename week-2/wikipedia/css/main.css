@@ -176,6 +176,8 @@ button, input {
   background: #f9f9f9;
   border: 1px solid #aaaaaa;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   float: right;
   margin: 6px 0 12px 12px;
   padding: 5px 25px 25px;
@@ -190,6 +192,86 @@ button, input {
   margin: 0;
   padding: 0;
   text-align: center;
+}
+
+.biography figcaption {
+  text-align: center;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+dl {
+  margin: 0 -10px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+dt {
+  font-weight: bold;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+dd {
+  margin: 0 0 0 80px;
+  padding: 0;
+}*/
+
+dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dt {
+  font-weight: bold;
+  width: 80px;
+}
+
+dd {
+  margin: 0;
+  width: calc(100% - 80px);
+}
+
+.thumb {
+  background: rgb(249, 249, 249);
+  border: 1px solid rgb(204, 204, 204);
+  float: right;
+  margin: 0 0 15px 15px;
+  height: auto;
+  padding: 5px;
+  width: 230px;
+}
+
+.thumb figcaption {
+  font-size: 12px;
+}
+
+cite {
+  display: block;
+  padding-left: 20px;
+  font-style: normal;
+}
+
+.publications-list li {
+  list-style: circle;
+  margin-left: 30px;
+}
+
+.references-list {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 60px;
+}
+
+.references-list li {
+  list-style: decimal;
+
 }
 
 .main-footer {
@@ -207,6 +289,10 @@ button, input {
 
 .footer-menu li {
   font-size: 12px;
+}
+
+.copyright img {
+  margin-left: 5px;
 }
 
 .footer-menu li a {
