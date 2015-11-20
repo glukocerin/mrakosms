@@ -172,6 +172,10 @@ button, input {
   padding: 20px 24px 24px;
 }
 
+.warning {
+  padding-left: 30px;
+}
+
 .biography {
   background: #f9f9f9;
   border: 1px solid #aaaaaa;
@@ -203,27 +207,6 @@ figure {
   padding: 0;
 }
 
-/*
-dl {
-  margin: 0 -10px;
-  overflow: hidden;
-  padding: 0;
-  width: 100%;
-}
-
-dt {
-  font-weight: bold;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 80px;
-}
-
-dd {
-  margin: 0 0 0 80px;
-  padding: 0;
-}*/
-
 dl {
   display: flex;
   flex-wrap: wrap;
@@ -237,6 +220,29 @@ dt {
 dd {
   margin: 0;
   width: calc(100% - 80px);
+}
+
+.toc {
+  background: #f9f9f9;
+  border: 1px solid #aaaaaa;
+  padding: 5px 2px;
+  display: inline-block;
+}
+
+.toc h3 {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.toc ol {
+  margin: 5px 0 0 30px;
+  padding: 0;
+}
+
+.toc li {
+  list-style: decimal;
+  padding-right: 15px;
 }
 
 .thumb {
