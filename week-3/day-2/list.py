@@ -1,20 +1,16 @@
+#listak
 class Elem(object):
-    __slots__ = [
-    'value',
-    'next'
-    ]
+    __slots__ = ['value', 'next']
+
     def __repr__(self):
         return '({}, {})'.format(self.value, self.next)
 
 def new_elem(value):
     elem = Elem()
     elem.value = value
-    elem.next =  None
+    elem.next = None
     return elem
 
-# head = new_elem(e)
-# head = append(head, 3)
-# head # => (2, (3, None))
 def append(head, value):
     end = head
     while end.next is not None:
@@ -22,14 +18,17 @@ def append(head, value):
     end.next = new_elem(value)
     return head
 
-# head = insert(head, 1, 3)
 def insert(head, index, value):
     if index == 0:
         new = new_elem(value)
         new.next = head
         return new
 
-    prev = at(head, index - 1)
+    prev = head
+    i = 0
+    while i < index-1:
+        prev = prev.next
+        i += 1
 
     new = new_elem(value)
     new.next = prev.next
@@ -37,22 +36,17 @@ def insert(head, index, value):
 
     return head
 
-def at(head, index):
-    elem = head
-    i = 0
-    while i < index:
-        elem = elem.next
-        i += 1
-
-#  head = remove(head, 2)
 def remove(head, index):
     if index == 0:
         elem = head.next
         return elem
 
-    prev = at(head, index - 1)
+    prev = head
+    i = 0
+    while i < index -1:
+        prev = prev.next
+        i += 1
 
-    elem = prev.next
-    prev.next = elem.next
+    prev.next = prev.next.next
 
     return head
