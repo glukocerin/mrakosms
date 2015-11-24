@@ -17,12 +17,10 @@ for i in range(i-1, num):
     i += 1
 else:
     pass
-
+# last element
 if rn[-1] < 0:
     rn[-1] = rn[-1] * -1
 else:
     pass
 
-an = sum(rn)
-
-print(an)
+print(sum(rn))
