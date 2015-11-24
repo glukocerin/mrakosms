@@ -1,4 +1,5 @@
-rn = input('Roman number: ').upper()
+r = input('Please type a Roman number: ').upper()
+rn = r
 rn = rn.replace('M', '1000 ' )
 rn = rn.replace('D', '500 ')
 rn = rn.replace('C', '100 ')
@@ -19,4 +20,6 @@ for i in range(i-1, num):
 else:
     pass
 
-print(sum(rn))
+print('I convert your Roman number (', r, ') to Arabic number:', (sum(rn)), sep='')
+
+# need features -check only valid, check lenght max 15
