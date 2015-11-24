@@ -1,10 +1,28 @@
-rn = input('Roman number: ')
-rn = rn.upper()
+rn = input('Roman number: ').upper()
+rn = rn.replace('M', '1000 ' )
+rn = rn.replace('D', '500 ')
+rn = rn.replace('C', '100 ')
+rn = rn.replace('L', '50 ')
+rn = rn.replace('X', '10 ')
+rn = rn.replace('V', '5 ')
+rn = rn.replace('I', '1 ')
+rn = rn.split()
+rn = list(map(int, rn))
+num = len(rn) # max 15
+i = 0
 
-print(rn)
-chars = set('[~?!@#$%^&*()_+{}":;\'ABEFGHJKNOPQRSTUWYZ]+$')
-
-if any((c in chars) for c in str(rn)): #valid characters?
-    print('Please use only valid characters! M-D-C-L-X-V-I') # no valid characters
+for i in range(i-1, num):
+    if int(rn[i-1]) < int(rn[i]):
+        rn[i-1] = -(rn[i-1])
+    i += 1
 else:
-    print('mehet')
+    pass
+
+if rn[-1] < 0:
+    rn[-1] = rn[-1] * -1
+else:
+    pass
+
+an = sum(rn)
+
+print(an)
