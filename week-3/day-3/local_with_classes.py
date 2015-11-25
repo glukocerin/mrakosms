@@ -6,7 +6,7 @@ class BankAccount:
         self.name = name
         self.balance = balance
 
-    def deposit(self, amount):lis
+    def deposit(self, amount):
         self.balance += amount
         return self.balance
 
