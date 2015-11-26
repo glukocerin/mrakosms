@@ -4,24 +4,24 @@
 # If string contains other characters than number or it has more or less than 4 numbers separated by comma function returns "incorrect input".
 # If string contains 4 numbers but not consecutive it returns "not consecutive”.’''
 
-def is_number(character):
-    if character in set('[~!@#$%^&*-=()_+{}":;\'abcdefghijklmnopqrstuvwxyz]+$'):
-        return False
-    else:
-        return True
+# def is_number(character):
+#     if character in set('1234567890+$'):
+#         return True
+#     else:
+#         return True
 
-def always_perfect(string): # always_perfect('1,2,3,4')
-    numbers = string.split(',')
+def check_root(string):
+    words = string.split(',')
 
-    for char in numbers:
-        for c in char:
-            if not is_number(c):
-                return 'incorrect input'
+    numbers = []
+    for word in words:
+        try:
+            numbers.append(int(word))
+        except ValueError:
+            return 'incorrect input'
 
     if len(numbers) != 4:
         return 'incorrect input'
-
-    numbers = list(map(int, numbers))
 
     for i in range(min(len(numbers), 3)):
         if numbers[i] + 1 != numbers[i+1]:
