@@ -28,6 +28,19 @@ def is_palindromes(word):
     except IndexError:
         pass
 
+def palindrome_length(word):
+    palindrome = ''
+    for i in range(1, len(word)-1):
+        if word[i] == word[i+1]:
+            palindrome = word[i] + word[i+1]
+            if word[i-1] == word[i+2]:
+                palindrome = word[i-1] + palindrome + word[i+2]
+                
+
+
+    print(palindrome)
+
+
 def search_palindromes(string):
     wordslist = cut_palindrones_input_string(string)
     i = 0
