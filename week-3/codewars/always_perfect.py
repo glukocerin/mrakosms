@@ -14,8 +14,9 @@ def always_perfect(string): # always_perfect('1,2,3,4')
     numbers = string.split(',')
 
     for char in numbers:
-        if not is_number(char):
-            return 'incorrect input'
+        for c in char:
+            if not is_number(c):
+                return 'incorrect input'
 
     if len(numbers) != 4:
         return 'incorrect input'
