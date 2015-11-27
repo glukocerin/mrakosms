@@ -5,48 +5,38 @@
 # output = search_palindromes('dog goat dad duck doodle never')
 # print(output) # it prints: ['dad', 'dood', 'eve']
 
-# lilli?
+# Test 'dad balabala doodle never duck goat dog dad balabalal'
 
-def cut_palindrones_input_string(string):
-    words = string.split(' ')
-    return words
+def create_palindromes_list(string):
+    wordslist = string.split(' ')
+    return wordslist
 
 def is_palindromes_lenght_valid(word):
     if len(word) >= 3:
-        return True
+        return word
 
-def is_palindromes(word):
-    try:
+def create_palindromes_wordlist(string):
+    wordslist = create_palindromes_list(string)
+    wordlist = []
+    for word in wordslist:
         if is_palindromes_lenght_valid(word):
-            i = 0
-            for i in range(0, len(word)-1):
-                if word[i] == word[i+2]:
-                    return True
-                elif word[i] == word[i+1] and word[i-1] == word[i+2]:
-                    return True
-            return word
-    except IndexError:
-        pass
+            wordlist.append(word)
+    return wordlist
 
-def palindrome_length(word):
-    palindrome = ''
-    for i in range(1, len(word)-1):
-        if word[i] == word[i+1]:
-            palindrome = word[i] + word[i+1]
-            if word[i-1] == word[i+2]:
-                palindrome = word[i-1] + palindrome + word[i+2]
-                
-
-
-    print(palindrome)
-
+def show_palindrome(word):
+    palindromes = []
+    wordlength = len(word)
+    for i in range(wordlength):
+        for j in range(wordlength):
+            if word[i:j+1] == word[i:j+1][::-1] and len(word[i:j+1]) > 2:
+                palindromes.append(word[i:j+1])
+    return palindromes
 
 def search_palindromes(string):
-    wordslist = cut_palindrones_input_string(string)
-    i = 0
-    while i < len(wordslist):
-        if is_palindromes(wordslist[i]):
-            print(wordslist[i])
-        i += 1
+    startlist = create_palindromes_wordlist(string)
+    output_temp = []
+    for word in startlist:
+        output_temp.extend(show_palindrome(word))
 
-search_palindromes(input('Adj meg valamit: '))
+    output = set(output_temp)
+    return output
