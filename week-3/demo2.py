@@ -28,7 +28,7 @@ def show_palindrome(word):
     wordlength = len(word)
     for i in range(wordlength):
         for j in range(wordlength):
-            if word[i:j+1] == word[i:j+1][::-1] and len(word[i:j+1]) > 2:
+            if word[i:j+1] == word[i:j+1][::-1] and len(word[i:j+1]) >= 2:
                 palindromes.append(word[i:j+1])
     return palindromes
 
@@ -39,4 +39,20 @@ def search_palindromes(string):
         output_temp.extend(show_palindrome(word))
 
     output = set(output_temp)
-    return output
+
+    print('Found the following palindromes in the text: \n', output)
+
+def create_palindrome(word):
+    output = word + word[::-1]
+    print('The palindrome of', word, 'is:', output)
+
+def menu():
+    choose = input('Please choose the following menu: \n 1 - Create Palindrome \n 2 - Search Palindromes in a text \n Q - quit the menu \n Type the number or quit: ').lower()
+    while choose != 'q':
+        if choose == '1':
+            create_palindrome(input('\n****************************************\n \n Please type a word: '))
+        if choose == '2':
+            search_palindromes(input('Please type: '))
+        choose = input('Super! What is next? \n Choose the following menu: \n 1 - Create Palindrome \n 2 - Search Palindromes in a text \n Q - quit the menu \n Type the number or quit: ').lower()
+
+menu()
