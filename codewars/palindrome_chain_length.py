@@ -6,29 +6,30 @@
 # 87 + 78 = 165; 165 + 561 = 726; 726 + 627 = 1353; 1353 + 3531 = 4884
 # 4884 is a palindrome and we needed 4 steps to obtain it, so palindrome_chain_length(87) == 4
 
-def make_palindrome(num):
-    rev_num = str(num)[::-1]
-    return int(rev_num)
+def make_palindrome(number):
+    number_reverse = str(number)[::-1]
+    return int(number_reverse)
 
-def palindrome_sum(num):
-    return num + make_palindrome(num)
+def palindrome_sum(number):
+    return number + make_palindrome(number)
 
-def round(num):
-    palindrome = make_palindrome(num)
+def round(number):
+    palindrome = make_palindrome(number)
     palindrome_round_number = palindrome_sum(palindrome)
     return palindrome_round_number
 
-def is_palindrome_number(num):
-    if str(num) == str(num)[::-1]:
+def is_palindrome_number(number):
+    if str(number) == str(number)[::-1]:
         return True
     else:
         return False
 
-def palindrome_chain_length(num):
-    numbers = []
-    while is_palindrome_number(num) == False:
-        numbers.append(round(num))
-        num = round(num)
+def palindrome_chain_length(start_number):
+    actual_number = start_number
+    numbers_list = []
+    while is_palindrome_number(actual_number) == False:
+        numbers_list.append(round(actual_number))
+        actual_number = round(actual_number)
 
-    result = len(numbers)
+    result = len(numbers_list)
     return result
