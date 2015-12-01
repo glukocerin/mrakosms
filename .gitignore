@@ -1,1 +1,4 @@
 .DS_Store
+week-3/test.py
+__pycache__
+*.pyc
