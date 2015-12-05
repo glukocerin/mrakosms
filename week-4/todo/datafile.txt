@@ -1,0 +1,7 @@
+make presentationX
+create todo appX
+practice python
+complete codeacademy course
+delete database
+macska
+feladat
