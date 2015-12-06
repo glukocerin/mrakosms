@@ -1,57 +1,73 @@
-from sys import *
-import os
-import todo
+import open_write
+from lists import *
+import removes
 
-def help():
-    #os.system('clear') # on linux / os x
-    os.system('cls')  # on windows
-    open_file = open('help.txt')
-    open_text = open_file.read()
-    open_file.close()
-    print(open_text)
+def add_todo(new_task = ''):
+    if new_task == '':
+        new_task = input('UUPPS! No input! Please, write your task, and press enter:\n')
+        return add_todo(new_task)
+    todo_items = open_write.open_file().split('\n')
+    todo_items.append(new_task)
+    open_write.write_file(todo_items)
+    print('Your new task successfully added')
 
-if len(argv) != 1 and len(argv) < 4:
-    if (argv[1] == 'add'):
-        if len(argv) == 3:
-            todo.add_todo(argv[2])
+def completed_todo(task_id = ''):
+    items = removes.remove_helper()
+    output = []
+    task_ids =[]
+    if task_id == '':
+        list_todo()
+        task_id = input('Choose a number: ')
+        return completed_todo(task_id)
+    task_id = int(task_id)
+    task_ids=list_for_completed_helper()
+    for i in range(len(task_ids)):
+        if task_id == i+1:
+            for j in range(len(items)):
+                if j == task_ids[i]:
+                    output.append(items[task_ids[i]] + 'X')
+                else:
+                    output.append(items[j])
+    open_write.write_file(output)
+
+def uncompleted_todo(task_id = ''):
+    items = removes.remove_helper()
+    output = []
+    task_ids =[]
+    if task_id == '':
+        list_todo_only_ch()
+        task_id = input('Choose a number: ')
+        return uncompleted_todo(task_id)
+
+    task_id = int(task_id)
+    task_ids=list_for_uncompleted_helper()
+    for i in range(len(task_ids)):
+        if task_id == i+1:
+            for j in range(len(items)):
+                if j == task_ids[i]:
+                    output.append(items[task_ids[i]][0:-1])
+                else:
+                    output.append(items[j])
+    open_write.write_file(output)
+
+def search_todo():
+    items = removes.remove_helper()
+    search_word = input('What are you looking for?: ')
+    a=0
+    for i in range(len(items)):
+        if search_word==items[i]:
+            print(str(items[i])+" is the " + str(i+1)+ ". on your list")
+            break
+        elif search_word==items[i][:-1] and items[i][-1]=='*':
+            print(str(items[i][:-1])+ ' is already removed')
+            break
+        elif search_word==items[i][:-1] and items[i][-1]=='X':
+            print(str(items[i][:-1])+ ' is already done')
+            break
+        elif search_word==items[i][:-2] and items[i][-1]=='*' and items[i][-2]=='X':
+            print(str(items[i][:-2])+ ' is already done and removed')
+            break
         else:
-            todo.add_todo()
-    elif argv[1] == 'st':
-            todo.list_todo_all()
-    elif (argv[1] == 'ls'):
-        if len(argv) == 3 and argv[2] == '-l':
-            todo.list_todo_ch()
-        elif len(argv) == 3 and argv[2] == '-la':
-            todo.list_todo_all()
-        elif len(argv) == 3 and argv[2] == '-ch':
-            todo.list_todo_only_ch()
-        else:
-            todo.list_todo()
-    elif (argv[1] == 'rm'):
-        if len(argv) == 3 and argv[2] == '-r':
-            todo.remove_todo()
-        elif len(argv) == 3 and argv[2] == '-rf':
-            todo.remove_todo_ultimate()
-        else:
-            todo.remove_todo()
-    elif (argv[1] == 'ch'):
-        todo.completed_todo()
-    elif (argv[1] == 'uch'):
-        todo.uncompleted_todo()
-    elif (argv[1] == '--help'):
-        help()
-    elif (argv[1]) == '--version':
-        print('TODO for Developers version 0.1')
-    elif (argv[1] == 'del'):
-        todo.delete_database()
-    elif (argv[1] == 'src'):
-        todo.search_todo()
-    elif (argv[1] == '--menu'):
-        todo.clear()
-        #os.system('clear') # on linux / os x
-        os.system('cls')  # on windows
-        menu.menu_input(True)
-    else:
-        print('Invalid syntax')
-else:
-    help()
+            a+=1
+    if a==len(items):
+        print("It is not on your todo list")
