@@ -6,5 +6,8 @@ class Wizard(Character):
         super().__init__(name, hp, damage)
 
     def strike(self, enemy):
-        enemy.hp -= self.damage
+        if self.manna > 5:
+            enemy.hp -= 3 * self.damage
+        else:
+            enemy.hp -= self.damage
         self.manna -= 5
