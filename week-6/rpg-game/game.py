@@ -1,3 +1,3 @@
 import menu
 
-menu.print_menu()
+menu.main_menu()

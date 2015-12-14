@@ -1,28 +1,26 @@
 def print_menu():
     print('(N)ew Game, (L)oad Game, (E)xit')
-    print(main_menu(input('Choose an item: ')))
 
-
-def main_menu(inputstr):
+def main_menu():
+    print_menu()
+    inputstr = input('Valassz')
     while inputstr.upper() != 'E':
         if inputstr.upper() == 'N':
             return print_sub_menu_new_game()
         elif inputstr.upper() == 'L':
             return print_sub_menu_load_game()
-        print('No option choose from the list')
         print_menu()
+        inputstr = input('Nem jo ujra')
 
 def print_sub_menu_new_game():
-    print('New game submenu items')
-
+    print(sub_menu_new_game())
 
 def print_sub_menu_load_game():
-    print('Load game submenu items')
+    print(sub_menu_load_game())
 
+def sub_menu_new_game():
+    return 'New game submenu items'
 
-def sub_menu_new_game(inputstr):
-    pass
-
-def sub_menu_load_game(inputstr):
-    pass
+def sub_menu_load_game():
+    return 'Load game submenu items'
 
