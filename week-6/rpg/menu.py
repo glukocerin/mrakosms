@@ -8,9 +8,9 @@ class Menu:
     def display(self):
         while True:
             self.menu_print()
-            choice = input("Choose a number: ")
+            choice = input("Choose a number: ").upper()
             self.choose_item(choice)
-            if choice.upper() == 'Q':
+            if choice == 'Q':
                 break
 
     def get_menu(self):
@@ -20,6 +20,8 @@ class Menu:
         for item in self.items:
             if item.num == choice:
                 return item.command()
+
+        return 'Wrong Input'
 
 class MenuItem:
     def __init__(self, num, description, command):
