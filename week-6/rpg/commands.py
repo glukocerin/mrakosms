@@ -13,13 +13,8 @@ def new_game():
     menu_item.new_game.display()
 
 def define_player():
-    player.user.name = get_username()
+    player.user.set_username()
     return new_game()
-
-def get_username():
-    print()
-    username = input(message.add_name.ret())
-    return username
 
 def load_game():
     print()
@@ -32,7 +27,7 @@ def exit_game():
 
 def set_start():
     player.user.dexterity = roll() + 6
-    player.user.health = roll() + roll() + 6
+    player.user.health = roll() + roll() + 12
     player.user.luck = roll() + 6
     player.user.start_dexterity = player.user.dexterity
     player.user.start_health = player.user.health
@@ -80,8 +75,6 @@ def quit_menu():
 def save_and_quit():
     pass
 
-def resume():
-    pass
 
 def quit_wo_save():
     sys.exit()
@@ -97,6 +90,10 @@ def begin():
     print(player.user.inventory['potion'])
     print(player.user.inventory['Sword'])
     print(player.user.inventory['Armor'])
+    menu_item.potion_begin_menu.display()
+
+def start():
+    print('Elindult a jatek')
 
 
 

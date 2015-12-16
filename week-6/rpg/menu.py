@@ -1,6 +1,7 @@
 import message
 import os
 
+
 class Menu:
     def __init__(self, items):
         self.items = items
@@ -12,12 +13,13 @@ class Menu:
                 choice = int(input(message.choose.ret()))
                 if choice > len(self.items):
                     message.wrong_integer.show()
-                # elif choice == 0:
-                #     break
                 else:
                     self.choose_item(choice)
+            except Resume:
+                break
             except ValueError:
                 message.no_integer.show()
+
 
     def menu_print(self):
         print(self.get_menu())
@@ -34,12 +36,16 @@ class Menu:
                     return item.command(item.arg)
         return 'Wrong Input'
 
+class Resume(Exception):
+    pass
+
+def resume():
+    raise Resume
 # class NewGame(Menu):
 #     pass
 
 # class LoadGame(Menu):
 #     pass
-
 
 
 class MenuItem:
