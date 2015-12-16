@@ -4,10 +4,8 @@ import random
 class Character:
     def __init__(self):
         self.name = ''
-        self.dexterity = 0
-        self.health = 0
-        self.luck = 0
-        self.start_stats = {'dexterity': 0, 'health': 0, 'luck': 0}
+        self.stat = {'dexterity': 0, 'health': 0, 'luck': 0}
+        self.start_stat = {'dexterity': 0, 'health': 0, 'luck': 0}
         self.inventory = {'Selected potion': None, 'Sword': 1, 'Armor': 1}
 
     def get_username(self):
@@ -17,41 +15,20 @@ class Character:
         self.name = input('nev: ')
 
     def set_stats(self):
-        self.set_dexterity()
-        self.set_healt()
-        self.set_luck()
+        for item in self.stat:
+            if item == 'health':
+                self.stat[item] = self.dice(2) + 12
+            self.stat[item] = self.dice(1) + 6
 
     def set_start_stats(self):
-        self.start_stats['dexterity'] = self.get_dexterity()
-        self.start_stats['health'] = self.get_healt()
-        self.start_stats['luck'] = self.get_luck()
+        self.start_stat = self.stat
         # return cmd.new_game()
 
-    def get_stat(self):
-        self.get_dexterity()
-        self.get_healt()
-        self.get_luck()
+    def get_stat(self, item):
+        return item + ': ' + str(self.stat[item])
 
     def get_start_stats(self, item):
-        return item + ': ' + str(self.start_stats[item])
-
-    def get_dexterity(self):
-        return self.dexterity
-
-    def set_dexterity(self):
-        self.dexterity = self.dice(1) + 6
-
-    def get_healt(self):
-        return self.health
-
-    def set_healt(self):
-        self.health = self.dice(2) + 12
-
-    def get_luck(self):
-        return self.luck
-
-    def set_luck(self):
-        self.luck = self.dice(1) + 6
+        return item + ': ' + str(self.start_stat[item])
 
     def dice(self, piece):
         result = 0
