@@ -1,17 +1,26 @@
+import message
+import os
+
 class Menu:
     def __init__(self, items):
         self.items = items
 
-    def menu_print(self):
-        print(self.get_menu())
-
     def display(self):
         while True:
-            self.menu_print()
-            choice = input("Choose a number: ").upper()
-            self.choose_item(choice)
-            if choice == 'Q':
-                break
+            try:
+                self.menu_print()
+                choice = int(input(message.choose.ret()))
+                if choice > len(self.items):
+                    message.wrong_integer.show()
+                # elif choice == 0:
+                #     break
+                else:
+                    self.choose_item(choice)
+            except ValueError:
+                message.no_integer.show()
+
+    def menu_print(self):
+        print(self.get_menu())
 
     def get_menu(self):
         return '\n'.join(str(item) for item in self.items)
@@ -19,15 +28,26 @@ class Menu:
     def choose_item(self, choice):
         for item in self.items:
             if item.num == choice:
-                return item.command()
-
+                if item.arg == None:
+                    return item.command()
+                else:
+                    return item.command(item.arg)
         return 'Wrong Input'
 
+# class NewGame(Menu):
+#     pass
+
+# class LoadGame(Menu):
+#     pass
+
+
+
 class MenuItem:
-    def __init__(self, num, description, command):
+    def __init__(self, num, description, command, arg = None):
         self.num = num
         self.description = description
         self.command = command
+        self.arg = arg
 
     def __repr__(self):
         return '{} {}'.format(self.num, self.description)
