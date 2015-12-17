@@ -8,63 +8,46 @@ class Message:
     def ret(self):
         return self.message
 
+### Menu Items Messages
+
+choose = Message('\nFrom the number of menu above choose one: ')
+continue_ = Message('Continue')
+save = Message('Save')
+quit = Message('Quit')
+wrong_integer = Message('Wrong input, please select from menu numbers!')
+no_integer = Message('Wrong, that was no integer!')
 
 
+# Main Menu
+new_game = Message('New Game')
+load_game = Message('Load Game')
+exit_game = Message('Exit')
+exit = Message('Are you sure? (y)es / (n)o: ')
 
+# New Game Menu
+set_name = Message('Enter your name: ')
+name_is_correct = Message('Is it correct? ->')
+reenter_name = Message('Reenter name')
 
-choose = Message(
-    'Valassz egy szamot, majd nyomj egy Entert: '
-    )
-wrong_integer = Message(
-    'Nem jo szamot adtal meg, mert nem szerepel a menuben!!!\nNezd meg ujra a menut es probalkozz , hatha beletalalsz'
-    )
-no_integer = Message(
-    'Ez nem szam volt, probald ujra'
-    )
-add_name = Message(
-    'Hogy hivhatunk a jatekban?: '
-    )
+# Roll Menu
+reroll_stats = Message('Reroll stats')
+start_roll = Message('Your started stats are the following:')
 
-quit = Message(
-    'Hogy szeretnel kilepni?: '
-    )
+# Quit menu
+quit_question = Message('Quit menu')
+save_and_quit = Message('Save and Quit')
+save_wo_quit = Message('Quit without Save')
+resume = Message('Resume')
 
-exit = Message(
-    'Biztos ki szeretnel lepni? (y - igen, n - nem): '
-        )
+#Potion
+choose_potion = Message('Choose a potion')
+potion_of_health = Message('Potion of Health')
+potion_of_dexterity = Message('Potion of Dexterity')
+potion_of_luck = Message('Potion of Luck')
+set_potion = Message('Your selected:')
+reselect_potion = Message('Reselect the Potion')
+begin = Message('Begin')
+inventory = Message('Your inventory:')
+your_name = Message('Name: ')
 
-dexterity_roll = Message(
-    'Ez itt jelenik meg'
-    )
-
-roll_one = Message(
-    'Dobj a kockaval'
-        )
-
-choose_potion = Message(
-    'Valassz egy italt, amit majd a jatek soran hasznalhatsz fel'
-    )
-
-new_game = Message(
-    '- Uj jatek inditasa'
-    )
-
-load_game = Message(
-    '- Mentett jatek betoltese'
-    )
-
-exit_game = Message(
-    '- Kilepes a jatekbol')
-set_potion = Message(
-    'Az alabbi potiont valsztottad amit majd felhasnalhatsz a jatek soran:')
-
-potion_of_health = Message(
-    'Potion of Health'
-    )
-
-potion_of_dexterity = Message(
-    'Potion of Dexterity'
-    )
-potion_of_luck = Message(
-    'Potion of Luck'
-    )
+begin_welcome = Message('\nYour stats are the following:')

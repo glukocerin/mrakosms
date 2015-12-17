@@ -1,41 +1,41 @@
 import random
-# import commands as cmd
+import commands as cmd
+import message as mg
 
 class Character:
     def __init__(self):
         self.name = ''
-        self.stat = {'dexterity': 0, 'health': 0, 'luck': 0}
-        self.start_stat = {'dexterity': 0, 'health': 0, 'luck': 0}
+        self.stats = {'Dexterity': 0, 'Health': 0, 'Luck': 0}
+        self.start_stats = {'Dexterity': 0, 'Health': 0, 'Luck': 0}
         self.inventory = {'Selected potion': None, 'Sword': 1, 'Armor': 1}
 
     def get_username(self):
         return self.name
 
     def set_username(self):
-        self.name = input('nev: ')
+        self.name = input(mg.set_name.ret())
+        print(mg.name_is_correct.ret(), self.name)
 
     def set_stats(self):
-        for item in self.stat:
+        for item in self.stats:
             if item == 'health':
-                self.stat[item] = self.dice(2) + 12
-            self.stat[item] = self.dice(1) + 6
+                self.stats[item] = self.dice(2) + 12
+            self.stats[item] = self.dice(1) + 6
 
     def set_start_stats(self):
-        self.start_stat = self.stat
-        # return cmd.new_game()
+        self.start_stats = self.stats
 
-    def get_stat(self, item):
-        return item + ': ' + str(self.stat[item])
+    def get_stats(self, item):
+        return item + ': ' + str(self.stats[item])
 
     def get_start_stats(self, item):
-        return item + ': ' + str(self.start_stat[item])
+        return item + ': ' + str(self.start_stats[item])
+
+    def get_inventory(self, item):
+        return item + ': ' + str(self.inventory[item])
 
     def dice(self, piece):
         result = 0
         for n in range(piece):
             result += random.randint(1,6)
         return result
-
-
-
-

@@ -1,7 +1,6 @@
 import message
 import os
 
-
 class Menu:
     def __init__(self, items):
         self.items = items
@@ -11,7 +10,7 @@ class Menu:
             try:
                 self.menu_print()
                 choice = int(input(message.choose.ret()))
-                if choice > len(self.items):
+                if choice > len(self.items) or choice < 1:
                     message.wrong_integer.show()
                 else:
                     self.choose_item(choice)
@@ -19,7 +18,6 @@ class Menu:
                 break
             except ValueError:
                 message.no_integer.show()
-
 
     def menu_print(self):
         print(self.get_menu())
@@ -41,21 +39,4 @@ class Resume(Exception):
 
 def resume():
     raise Resume
-# class NewGame(Menu):
-#     pass
-
-# class LoadGame(Menu):
-#     pass
-
-
-class MenuItem:
-    def __init__(self, num, description, command, arg = None):
-        self.num = num
-        self.description = description
-        self.command = command
-        self.arg = arg
-
-    def __repr__(self):
-        return '{} {}'.format(self.num, self.description)
-
 
