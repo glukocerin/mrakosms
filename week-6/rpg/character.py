@@ -38,3 +38,6 @@ class Character:
         for n in range(piece):
             result += random.randint(1,6)
         return result
+
+    def roll(self, piece):
+        return self.dice(2) + 6

@@ -70,6 +70,13 @@ figth_menu = menu.Menu([
     MenuItem(3, mg.quit.ret(), cmd.quit_menu)
     ])
 
+strike_menu = menu.Menu([
+    MenuItem(1, mg.continue_.ret(), game.game.strike),
+    MenuItem(2, 'Try your luck', cmd.save),
+    MenuItem(3, 'Retreat', cmd.save),
+    MenuItem(4, mg.quit.ret(), cmd.quit_menu)
+    ])
+
 quit_menu = menu.Menu([
     MenuItem(1, mg.save_and_quit.ret(), cmd.quit_wo_save),
     MenuItem(2, mg.save_wo_quit.ret(), cmd.quit_wo_save),

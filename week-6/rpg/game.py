@@ -1,5 +1,6 @@
 import monster
 import player
+import character
 import menu_item
 
 class Game:
@@ -24,7 +25,15 @@ class Game:
         return menu_item.figth_menu.display()
 
     def strike(self):
-        pass
+        var_player = player.user.stats['Dexterity'] + self.roll(2)
+        var_monster = monster.monster.stats['Dexterity'] + self.roll(2)
+        if var_player >+ var_monster:
+            print('You hit the monster')
+        print('You hit the monster')
+        return menu_item.strike_menu.display()
+
+    def roll(self, piece):
+        return character.Character.dice(self, 2) + 6
 
 
 

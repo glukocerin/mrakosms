@@ -1,9 +1,13 @@
 from character import Character
 
 class Monster(Character):
-    self.stats = {'Dexterity': 0, 'Health': 0}
+    def set_start_stat(self):
+        self.stats = {'Dexterity': 0, 'Health': 0}
 
-    def set_monster(self):
-        pass
+
+    def new_monster(self):
+        self.name = 'Monster'
+        self.set_stats()
+        # return menu_item.new_game.display()
 
 monster = Monster()
