@@ -1,5 +1,4 @@
 import random
-import commands as cmd
 import message as mg
 
 class Character:

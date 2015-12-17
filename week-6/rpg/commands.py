@@ -2,7 +2,6 @@ import sys
 import os
 import menu_item
 import message as mg
-import time
 
 def load_game():
     print('Indulhat a jatek')
@@ -15,10 +14,6 @@ def exit_game():
 def quit_menu():
     mg.quit_question.show()
     menu_item.quit_menu.display()
-
-def wait(num):
-    for i in range(num*2):
-        time.sleep(0.1)
 
 def continue_to_potion():
     mg.choose_potion.show()
@@ -37,8 +32,7 @@ def quit_wo_save():
 def clear():
     os.system('clear')
 
-def start():
-    print('Elindult a jatek')
+
 
 
 

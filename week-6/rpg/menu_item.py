@@ -1,6 +1,7 @@
 import menu
 import commands as cmd
 import player
+import game
 import message as mg
 
 class MenuItem:
@@ -58,8 +59,14 @@ potion_submenu = menu.Menu([
     ])
 
 potion_begin_menu = menu.Menu([
-    MenuItem(1, mg.begin.ret(), cmd.start),
+    MenuItem(1, mg.begin.ret(), game.game.start),
     MenuItem(2, mg.save.ret(), cmd.save),
+    MenuItem(3, mg.quit.ret(), cmd.quit_menu)
+    ])
+
+figth_menu = menu.Menu([
+    MenuItem(1, 'Strike', game.game.strike),
+    MenuItem(2, 'Retreat', cmd.save),
     MenuItem(3, mg.quit.ret(), cmd.quit_menu)
     ])
 

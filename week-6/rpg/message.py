@@ -25,7 +25,7 @@ exit_game = Message('Exit')
 exit = Message('Are you sure? (y)es / (n)o: ')
 
 # New Game Menu
-set_name = Message('Enter your name: ')
+set_name = Message('Enter name: ')
 name_is_correct = Message('Is it correct? ->')
 reenter_name = Message('Reenter name')
 
@@ -51,3 +51,4 @@ inventory = Message('Your inventory:')
 your_name = Message('Name: ')
 
 begin_welcome = Message('\nYour stats are the following:')
+begin_fight = Message('Test your Sword in a test fight')

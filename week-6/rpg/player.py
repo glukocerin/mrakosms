@@ -1,7 +1,7 @@
 from character import Character
 import menu_item
-import commands as cmd
 import message as mg
+import time
 
 class Player(Character):
     def new_player(self):
@@ -15,12 +15,12 @@ class Player(Character):
 
     def start_roll_display(self):
         mg.start_roll.show()
-        cmd.wait(2)
+        wait(2)
         print()
         for item in self.stats:
-            cmd.wait(2)
+            wait(2)
             print(item, ': ', self.stats[item], sep='')
-        cmd.wait(2)
+        wait(2)
         print()
         return menu_item.roll_menu.display()
 
@@ -43,6 +43,9 @@ class Player(Character):
         print()
         return menu_item.potion_begin_menu.display()
 
+def wait(num):
+    for i in range(num*2):
+        time.sleep(0.1)
 
 
 user = Player()
