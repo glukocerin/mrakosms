@@ -6,6 +6,11 @@ class Menu:
         self.items = items
 
     def display(self):
+        # self.menu_print()
+        # choice = int(input(message.choose.ret()))
+        # self.choose_item(choice)
+        # return self.display()
+
         while True:
             try:
                 self.menu_print()

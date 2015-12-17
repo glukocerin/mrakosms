@@ -1,5 +1,6 @@
 import random
 import message as mg
+import copy
 
 class Character:
     def __init__(self):
@@ -22,7 +23,7 @@ class Character:
             self.stats[item] = self.dice(1) + 6
 
     def set_start_stats(self):
-        self.start_stats = self.stats
+        self.start_stats = copy.deepcopy(self.stats)
 
     def get_stats(self, item):
         return item + ': ' + str(self.stats[item])
@@ -38,6 +39,3 @@ class Character:
         for n in range(piece):
             result += random.randint(1,6)
         return result
-
-    def roll(self, piece):
-        return self.dice(2) + 6

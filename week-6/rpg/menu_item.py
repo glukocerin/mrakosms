@@ -65,15 +65,15 @@ potion_begin_menu = menu.Menu([
     ])
 
 figth_menu = menu.Menu([
-    MenuItem(1, 'Strike', game.game.strike),
-    MenuItem(2, 'Retreat', cmd.save),
+    MenuItem(1, mg.strike.ret(), game.game.strike),
+    MenuItem(2, mg.retreat.ret(), cmd.no_work),
     MenuItem(3, mg.quit.ret(), cmd.quit_menu)
     ])
 
 strike_menu = menu.Menu([
-    MenuItem(1, mg.continue_.ret(), game.game.strike),
-    MenuItem(2, 'Try your luck', cmd.save),
-    MenuItem(3, 'Retreat', cmd.save),
+    MenuItem(1, mg.continue_.ret(), game.game.continue_fight),
+    MenuItem(2, mg.try_luck.ret(), game.game.try_luck),
+    MenuItem(3, mg.retreat.ret(), cmd.no_work),
     MenuItem(4, mg.quit.ret(), cmd.quit_menu)
     ])
 

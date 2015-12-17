@@ -3,6 +3,9 @@ import os
 import menu_item
 import message as mg
 
+def no_work():
+    print('no work')
+
 def load_game():
     print('Indulhat a jatek')
 

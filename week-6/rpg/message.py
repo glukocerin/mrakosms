@@ -52,3 +52,6 @@ your_name = Message('Name: ')
 
 begin_welcome = Message('\nYour stats are the following:')
 begin_fight = Message('Test your Sword in a test fight')
+try_luck = Message('Try your Luck')
+retreat = Message('Retreat')
+strike = Message('Strike')
