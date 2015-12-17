@@ -38,6 +38,7 @@ quit_question = Message('Quit menu')
 save_and_quit = Message('Save and Quit')
 save_wo_quit = Message('Quit without Save')
 resume = Message('Resume')
+add_new_item = Message('Add new item')
 
 #Potion
 choose_potion = Message('Choose a potion')

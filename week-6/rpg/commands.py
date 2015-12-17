@@ -2,12 +2,16 @@ import sys
 import os
 import menu_item
 import message as mg
+import player
 
 def no_work():
     print('no work')
 
 def load_game():
-    print('Indulhat a jatek')
+    player.user.list_files()
+    print()
+    player.user.load(input('Enter the filename: '))
+    player.user.get_character_stats()
 
 def exit_game():
     if input(mg.exit.ret())== 'y':
@@ -26,7 +30,9 @@ def save():
     menu_item.save_game.display()
 
 def save_and_quit():
-    print('save')
+    player.user.add_item()
+    os.system('clear')
+    sys.exit()
 
 def quit_wo_save():
     os.system('clear')

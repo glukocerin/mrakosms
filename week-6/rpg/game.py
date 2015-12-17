@@ -7,13 +7,15 @@ import copy
 
 class Game:
     def __init__(self):
-        pass
+        self.menu = {}
 
     def start(self):
         monster.monster.new_monster()
         monster.monster.set_stats()
         return self.refight()
 
+    # def register_action(self, option, function):
+    #     self.menu[option] = function
 
     def refight(self):
         print(player.user.get_username())
@@ -51,6 +53,7 @@ class Game:
     def try_luck(self):
         var = self.roll(2)
         if self.var_player < self.var_monster:
+            print('You are lucky')
             if var < player.user.stats['Luck']:
                 print('health -3')
                 player.user.stats['Health'] -= 3
@@ -59,6 +62,7 @@ class Game:
                 player.user.stats['Health'] -= 1
                 player.user.stats['Luck'] -= 1
         else:
+            print('You aren\'t lucky')
             if var < player.user.stats['Luck']:
                 print('health -1')
                 player.user.stats['Health'] -= 1
@@ -78,6 +82,8 @@ class Game:
             result += random.randint(1,6)
         return result
 
+    def add_menu(self):
+        pass
 
 game = Game()
 

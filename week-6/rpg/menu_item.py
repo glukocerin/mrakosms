@@ -28,9 +28,15 @@ new_game = menu.Menu([
     MenuItem(4, mg.quit.ret(), cmd.quit_menu)
 ])
 
+load_game = menu.Menu([
+    MenuItem(1, 'Load game', cmd.load_game),
+    MenuItem(2, mg.resume.ret(), menu.resume),
+    MenuItem(3, mg.quit.ret(), cmd.quit_menu),
+])
+
 save_game = menu.Menu([
-    MenuItem(1, 'add new item', cmd.no_work),
-    MenuItem(2, mg.resume.ret(), cmd.no_work),
+    MenuItem(1, mg.add_new_item.ret(), player.user.add_item),
+    MenuItem(2, mg.resume.ret(), menu.resume),
     MenuItem(3, mg.quit.ret(), cmd.quit_menu),
 ])
 
@@ -84,7 +90,7 @@ strike_menu = menu.Menu([
     ])
 
 quit_menu = menu.Menu([
-    MenuItem(1, mg.save_and_quit.ret(), cmd.quit_wo_save),
+    MenuItem(1, mg.save_and_quit.ret(), cmd.save_and_quit),
     MenuItem(2, mg.save_wo_quit.ret(), cmd.quit_wo_save),
     MenuItem(3, mg.resume.ret(), menu.resume)
 ])
