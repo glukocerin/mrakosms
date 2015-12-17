@@ -28,6 +28,12 @@ new_game = menu.Menu([
     MenuItem(4, mg.quit.ret(), cmd.quit_menu)
 ])
 
+save_game = menu.Menu([
+    MenuItem(1, 'add new item', cmd.no_work),
+    MenuItem(2, mg.resume.ret(), cmd.no_work),
+    MenuItem(3, mg.quit.ret(), cmd.quit_menu),
+])
+
 roll_menu = menu.Menu([
     MenuItem(1, mg.reroll_stats.ret(), player.user.roll_stats),
     MenuItem(2, mg.continue_.ret(), cmd.continue_to_potion),

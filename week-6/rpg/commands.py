@@ -23,7 +23,7 @@ def continue_to_potion():
     menu_item.potion_menu.display()
 
 def save():
-    print('save')
+    menu_item.save_game.display()
 
 def save_and_quit():
     print('save')
@@ -34,8 +34,3 @@ def quit_wo_save():
 
 def clear():
     os.system('clear')
-
-
-
-
-
