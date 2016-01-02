@@ -50,4 +50,47 @@ def next_bigger(num):
     digits[i : ] = digits[len(digits) - 1 : i - 1 : -1]
     return int(''.join(str(x) for x in digits))
 
-print(next_bigger(19999999999999999))
+# http://codereview.stackexchange.com/questions/115609/next-bigger-number-with-the-same-digits
+
+def swap_first_with_higher(digits):
+    """
+    >>> swap_first_with_higher(list('59853'))
+    ['8', '9', '5', '5', '3']
+
+    """
+    for pos in range(len(digits) - 1, 0, -1):
+        if digits[0] < digits[pos]:
+            digits[0], digits[pos] = digits[pos], digits[0]
+            break
+    return digits
+
+
+def reversed_tail(digits):
+    """
+    >>> reversed_tail(list('89553'))
+    ['8', '3', '5', '5', '9']
+
+    """
+    return [digits[0]] + digits[1:][::-1]
+
+
+def next_biggest(num):
+    """
+    >>> next_biggest(59853)
+    83559
+
+    >>> next_biggest(111)
+    -1
+
+    >>> next_biggest(11211)
+    12111
+
+    """
+    digits = list(str(num))
+    for pos in range(len(digits) - 1, 0, -1):
+        if digits[pos-1] < digits[pos]:
+            left = digits[:pos-1]
+            right = reversed_tail(swap_first_with_higher(digits[pos-1:]))
+            return int(''.join(left + right))
+
+    return -1
