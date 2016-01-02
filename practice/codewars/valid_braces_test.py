@@ -2,7 +2,7 @@ import unittest
 from valid_braces import valid_braces
 
 class ValidBracesTest(unittest.TestCase):
-    def test_odd_brace(self):
+    def test_odd_bracket(self):
         self.assertFalse(valid_braces('('))
         self.assertFalse(valid_braces(')'))
         self.assertFalse(valid_braces('{'))
@@ -10,27 +10,24 @@ class ValidBracesTest(unittest.TestCase):
         self.assertFalse(valid_braces('['))
         self.assertFalse(valid_braces(']'))
 
-    def test_single_braces(self):
+    def test_single_brackets(self):
         self.assertTrue(valid_braces('{}'))
         self.assertTrue(valid_braces('[]'))
         self.assertTrue(valid_braces('()'))
 
-    def test_double_braces(self):
+    def test_double_brackets(self):
         self.assertTrue(valid_braces('()()'))
         self.assertTrue(valid_braces('(){}'))
         self.assertTrue(valid_braces('()[]'))
 
-    def test_double_nested_braces(self):
+    def test_double_nested_brackets(self):
         self.assertTrue(valid_braces('(())'))
         self.assertTrue(valid_braces('({})'))
 
-    # def test_1(self):
-    #     self.assertTrue(valid_braces('(){}[]'))
-
-
-# validBraces( "(){}[]" ) => returns true
-# validBraces( "(}" ) => returns false
-# validBraces( "[(])" ) => returns false
-# validBraces( "([{}])" ) => returns true
+    def test_wrong(self):
+        self.assertFalse(valid_braces('({}[]'))
+        self.assertFalse(valid_braces('(){[]'))
+        self.assertFalse(valid_braces('({}}'))
+        self.assertFalse(valid_braces('({}['))
 
 unittest.main()
