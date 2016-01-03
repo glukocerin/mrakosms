@@ -80,9 +80,3 @@ def shortener(string):
         if word not in ignored_words:
             new_word += word[0].upper()
     return new_word
-
-
-print(generate_bc('https://google.ca/index.php',' + '))
-# <span class="active">HOME</span>
-# <a href="/">HOME</a><span class="active">GOOGLE.CA</span>
-
