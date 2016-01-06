@@ -1,32 +1,27 @@
 'use strict';
 
 function createTriangle(array) {
-  var final_triangle = '';
+  var output = '';
   array.forEach(function(row, i) {
-    final_triangle += Array(array.length-i).join(' ');
+    output += Array(array.length-i).join(' ');
     row.forEach(function(e) {
-      final_triangle += e + ' ';
+      output += e + ' ';
     });
-    final_triangle += '\n';
+    output += '\n';
   });
-  return final_triangle;
+  return output;
 }
 
 function pascalTriangle(rows) {
   var triangle = [];
   for (var i = 0; i < rows; i++) {
-    var currRow = [];
-    var t = triangle.length;
-    for (var j = 0; j < t; j++) {
-      var prevRow = triangle[t - 1];
-      if (typeof prevRow[j - 1] === 'undefined') {
-        currRow.push(1);
-      } else {
-        currRow.push((prevRow[j - 1] + prevRow[j]));
-      }
-    }
-    currRow.push(1);
-    triangle.push(currRow);
+    var curr = [];
+    triangle.forEach(function(e, j) {
+      var prev = triangle[triangle.length - 1];
+      !!prev[j - 1] ? curr.push((prev[j - 1] + prev[j])) : curr.push(1);
+    });
+    curr.push(1);
+    triangle.push(curr);
   }
   return createTriangle(triangle);
 }
