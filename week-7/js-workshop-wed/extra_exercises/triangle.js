@@ -1,30 +1,14 @@
 'use strict';
 
+function triangle(num) {
+  var output = ''
+  for (var i = 1; i <= num; i++) {
+    var empty = Array(num-i+1).join(' ');
+    var hashmarks = Array(i*2).join('#');
+    output += empty + hashmarks + empty + '\n';
+  }
+  return output;
+}
 
-
-
-triangle(3);
-
-/* 3-nal
-
-  #
- ###
-#####
-
-5-nel
-
-    #
-   ###
-  #####
- #######
-#########
-
-pascal
-
-     1
-    1 1
-   1 2 1
-  1 3 3 1
- 1 4 6 4 1
-
-*/
+console.log(triangle(3));
+console.log(triangle(5));
