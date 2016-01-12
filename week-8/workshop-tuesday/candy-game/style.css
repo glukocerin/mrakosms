@@ -1,11 +1,3 @@
 .hidden {
   display: none;
 }
-
-dl {
-  display: flex;
-}
-
-dt, dd {
-  flex: 100%;
-}

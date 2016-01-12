@@ -6,18 +6,19 @@
   </head>
   <body>
     <h1>Hello, it's the best candy game of world</h1>
-    <h2 id="bye"></h2>
+    <h2 class="bye"></h2>
     <dl>
       <dt>Candies:</dt><dd class="candies">0</dd>
       <dt>Lollipops:</dt><dd class="lollipops">0</dd>
       <dt>Candies / second:</dt><dd class="speed">0</dd>
     </dl>
-    <button class="create-candy">Create candy</button>
-    <form class="lollipop-form hidden">
+    <button class="btn candy">Create candy</button>
+    <div class="buy hidden">
       <label>How many lollipops would you buy: </label>
-      <input id="hello" class="lollipop-number" type="number" value="1" min="1">
-    </form>
-    <button class="buy-lollipop" disabled>Buy Lollipop</button>
+      <input id="lollipop" type="number" value="1" min="1">
+      <button class="btn lollipop">Buy Lollipop</button>
+      <button class="btn lollipop-max">Max</button>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,86 +1,113 @@
 'use strict';
 
-function CandiesGame() {
+function CandiesGame(candiesPerLollipop, lollipopsPerSpeed, end) {
+  this.cPL = candiesPerLollipop;
+  this.lPS = lollipopsPerSpeed;
   this.candies = 0;
   this.lollipops = 0;
   this.speed = 0;
-  this.candiesPerLollipop = 10;
-  this.lollipopsPerSpeed = 2;
+  this.end = end;
+  var _this = this;
 
-  this.selectCreateCandy = document.querySelector('.create-candy');
-  this.selectBuyLollipop = document.querySelector('.buy-lollipop');
-  this.selectCandies = document.querySelector('.candies');
-  this.selectLollipops = document.querySelector('.lollipops')
-  this.selectSpeed = document.querySelector('.speed')
-  this.selectLollipopNumber = document.querySelector('.lollipop-number')
-  this.selectLollipopForm = document.querySelector('.lollipop-form')
-  var _this = this
+  this.updateCandiesDisplay = function() {
+    this.updateDisplay('.candies',this.candies);
+  }
 
-  this.growCandies = function() {
-    this.candies++;
-    this.selectCandies.innerHTML = this.candies;
-    this.changeButtonVisibility();
+  this.updateLollipopDisplay = function() {
+    this.updateDisplay('.lollipops',this.lollipops);
+  }
+
+  this.updateSpeedpDisplay = function() {
+    this.updateDisplay('.speed',this.speed);
+  }
+
+  this.updateDisplay = function(classname, newHtml) {
+    document.querySelector(classname).innerHTML = newHtml;
   }
 
   this.buyLollipop = function(num) {
-    num = Number(num);
-    if (this.candies >= this.candiesPerLollipop) {
-      this.candies -= this.candiesPerLollipop * num;
-      this.lollipops += num;
-      this.selectCandies.innerHTML = this.candies;
-      this.selectLollipops.innerHTML = this.lollipops;
-      this.getSpeed();
-      document.getElementById('hello').value = '1';
-      this.changeButtonVisibility();
+    this.candies -= this.cPL * Number(num);
+    this.lollipops += Number(num);
+    document.getElementById('lollipop').value = '1';
     }
+
+  this.buyLollipopVisibility = function() {
+    var buydiv = document.querySelector('.buy');
+    if (this.candies >= this.cPL) {
+      buydiv.classList.remove('hidden');
+    } else {
+      buydiv.classList.add('hidden');
+    }
+    this.setMaxBuyLollipop();
   }
 
+  this.setMaxBuyLollipop = function() {
+    var maximum = Math.floor(this.candies / this.cPL);
+    document.getElementById('lollipop').max = maximum;
+    document.querySelector('.lollipop-max').innerHTML = 'Buy the max: ' + maximum;
+    return maximum;
+  }
 
-  this.changeButtonVisibility = function() {
-    this.selectBuyLollipop.disabled = true;
-    this.selectLollipopNumber.disabled = true;
-    this.selectLollipopForm.classList.add('class', 'hidden')
-    if (this.candies >= this.candiesPerLollipop) {
-      this.selectBuyLollipop.disabled = false;
-      this.selectLollipopForm.classList.remove('class', 'hidden')
-      this.selectLollipopNumber.disabled = false;
-
-      this.selectLollipopNumber.setAttribute('max', Math.floor(this.candies / this.candiesPerLollipop));
+  this.setUpdateInterval = function() {
+    this.getSpeed();
+    if (this.speed >= 1 && this.speed <= 20) {
+      clearInterval(this.newInterval);
+      this.newInterval = setInterval(function() {
+        _this.updatePageAfterCandies();
+      }, _this.setTimeInterval());
     }
   }
 
   this.getSpeed = function() {
-    this.speed = Math.floor(this.lollipops / this.lollipopsPerSpeed);
-    this.selectSpeed.innerHTML = this.speed;
-    if (this.speed >= 1 && this.speed <= 20) {
-      clearInterval(this._interval);
-      this._interval = setInterval(function() {
-        _this.candies ++;
-        _this.selectCandies.innerHTML = _this.candies;
-        _this.changeButtonVisibility();
-      }, 1000/_this.speed);
-      this.theEnd();
-    }
+    this.speed = Math.floor(this.lollipops / this.lPS);
+    this.updateSpeedpDisplay();
+  }
+
+  this.setTimeInterval =function() {
+    var time = 1000;
+    return time / this.speed;
+  }
+
+  this.updatePageAfterCandies = function() {
+    this.candies ++;
+    this.updateCandiesDisplay();
+    this.buyLollipopVisibility();
+    this.theEnd();
+  }
+
+  this.updatePageAfterLollipop = function(value) {
+    this.buyLollipop(value);
+    this.updateCandiesDisplay();
+    this.updateLollipopDisplay();
+    this.buyLollipopVisibility();
+    this.setUpdateInterval();
   }
 
   this.theEnd = function() {
-    if (this.candies >= 1000) {
-      clearInterval(_interval);
-      candies = 0;
-      lollipops = 0;
-      alert('You Win');
+    if (this.candies === this.end) {
+      clearInterval(this.newInterval);
+      alert('You WIN!!!');
+      this.candies = 0;
+      this.lollipops = 0;
     }
   }
 
-  this.selectCreateCandy.addEventListener('click', function() {
-      _this.growCandies();
-    });
+  this.main = function() {
+    document.querySelector('.candy').addEventListener('click', function() {
+        _this.updatePageAfterCandies();
+      });
 
-  this.selectBuyLollipop.addEventListener('click', function() {
-      _this.buyLollipop(_this.selectLollipopNumber.value);
-    });
+    document.querySelector('.lollipop').addEventListener('click', function() {
+        _this.updatePageAfterLollipop(document.getElementById('lollipop').value);
+      });
 
+    document.querySelector('.lollipop-max').addEventListener('click', function() {
+        _this.updatePageAfterLollipop(_this.setMaxBuyLollipop());
+      });
+  }
 }
 
-var game = new CandiesGame();
+var game = new CandiesGame(5, 2, 10);
+game.main();
+
 
