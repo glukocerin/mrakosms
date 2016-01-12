@@ -17,95 +17,100 @@ var images = [
   {title: '', src: 'images/create_tn.png', alt: ''},
 ]
 
-var nextBtn = document.querySelector('.next');
-var prevBtn = document.querySelector('.prev');
-var nextImg = document.querySelector('.next-image');
-var prevImg = document.querySelector('.prev-image');
-var nextThumb = document.querySelector('.next-tn');
-var prevThumb = document.querySelector('.prev-tn');
-var currentImage = document.querySelector('.actual-image');
-var idxOfImg = 0;
-var thumbnails = document.querySelector('.thumbnails');
-var thumbnail = document.querySelector('.thumbnail');
+function Gallery(images) {
+  var _this = this;
+  this.images = images
+  this.nextImg = document.querySelector('.next');
+  this.prevImg = document.querySelector('.prev');
+  this.nextThumb = document.querySelector('.next-tn');
+  this.prevThumb = document.querySelector('.prev-tn');
+  this.currentImage = document.querySelector('.actual-image');
+  this.idxOfImg = 0;
+  this.thumbnails = document.querySelector('.thumbnails');
+  this.thumbnail = document.querySelector('.thumbnail');
 
-function next() {
-  step(images[++idxOfImg]);
-}
-
-function prev() {
-  step(images[--idxOfImg]);
-}
-
-function jump() {
-  if (event.target.id) {
-    idxOfImg = event.target.id;
-    step(images[idxOfImg]);
+  this.next = function() {
+    this.step(images[++this.idxOfImg]);
   }
-}
 
-function step(image) {
-  createImage(image)
-  hideBtn();
-}
-
-function createImage(image) {
-  for (var attr in image) {
-    createImageAttributes(attr, image[attr]);
+  this.prev = function() {
+    this.step(images[--this.idxOfImg]);
   }
-  if (idxOfImg < 2) {
-    createThumbnails(2);
-  } else if (idxOfImg > images.length - 3) {
-    createThumbnails(images.length - 3);
-  } else {
-    createThumbnails(idxOfImg);
-  }
-  document.getElementById(idxOfImg).setAttribute('class', 'active');
 
-}
-
-function createImageAttributes(key, value) {
-  currentImage.setAttribute(key, value);
-}
-
-function hideBtn() {
-  if (idxOfImg === 0) {
-    prevBtn.classList.add('hide');
-    nextImg.setAttribute('src', images[Number(idxOfImg) + 1].src);
-  } else if (idxOfImg === images.length - 1) {
-    nextBtn.classList.add('hide')
-    prevImg.setAttribute('src', images[Number(idxOfImg) - 1].src);
-  } else {
-    prevBtn.classList.remove('hide');
-    nextBtn.classList.remove('hide');
-    prevImg.setAttribute('src', images[Number(idxOfImg) - 1].src);
-    nextImg.setAttribute('src', images[Number(idxOfImg) + 1].src);
-  }
-}
-
-function createThumbnails(idxOfImg) {
-  thumbnails.innerHTML = '';
-  var image;
-  var last = Number(idxOfImg) + 3
-  var first = Number(idxOfImg) - 2
-  for (var i = first; i < last; i++) {
-    image = document.createElement('img');
-    image.setAttribute('id', i);
-    image.setAttribute('src', images[i].src);
-    image.setAttribute('class', 'thumbnail');
-    if (image !== undefined) {
-      thumbnails.appendChild(image)
-    } else {
-      break;
+  this.jump = function(event) {
+    if (event.target.id) {
+      this.idxOfImg = event.target.id;
+      this.step(images[this.idxOfImg]);
     }
   }
+
+  this.step = function(image) {
+    this.createImage(image)
+    this.hideBtn();
+  }
+
+  this.createImage = function(image) {
+    for (var attr in image) {
+      this.createImageAttributes(attr, image[attr]);
+    }
+    if (this.idxOfImg < 2) {
+      this.createThumbnails(2);
+    } else if (this.idxOfImg > images.length - 3) {
+      this.createThumbnails(images.length - 3);
+    } else {
+      this.createThumbnails(this.idxOfImg);
+    }
+    document.getElementById(this.idxOfImg).setAttribute('class', 'active');
+  }
+
+  this.createImageAttributes = function(key, value) {
+    this.currentImage.setAttribute(key, value);
+  }
+
+  this.hideBtn = function() {
+    if (this.idxOfImg === 0) {
+      this.prevImg.classList.add('hide');
+      this.nextImg.setAttribute('src', images[Number(this.idxOfImg) + 1].src);
+    } else if (this.idxOfImg === images.length - 1) {
+      this.nextImg.classList.add('hide')
+      this.prevImg.setAttribute('src', images[Number(this.idxOfImg) - 1].src);
+    } else {
+      this.prevImg.classList.remove('hide');
+      this.nextImg.classList.remove('hide');
+      this.prevImg.setAttribute('src', images[Number(this.idxOfImg) - 1].src);
+      this.nextImg.setAttribute('src', images[Number(this.idxOfImg) + 1].src);
+    }
+  }
+
+  this.createThumbnails = function(index) {
+    this.thumbnails.innerHTML = '';
+    var image;
+    var last = Number(index) + 3
+    var first = Number(index) - 2
+    for (var i = first; i < last; i++) {
+      image = document.createElement('img');
+      image.setAttribute('id', i);
+      image.setAttribute('src', images[i].src);
+      image.setAttribute('class', 'thumbnail');
+      if (image !== undefined) {
+        this.thumbnails.appendChild(image)
+      } else {
+        break;
+      }
+    }
+  }
+  this.createImage(images[++this.idxOfImg])
+  this.hideBtn();
+  this.nextImg.addEventListener('click', function() {
+    _this.next();
+  });
+  this.prevImg.addEventListener('click', function() {
+    _this.prev();
+  });
+  this.thumbnails.addEventListener('click', function(event) {
+    _this.jump(event);
+  });
+
 }
 
-createImage(images[idxOfImg])
-hideBtn();
-
-nextBtn.addEventListener('click', next);
-prevBtn.addEventListener('click', prev);
-thumbnails.addEventListener('click', jump);
-
-
-
+var gallery = new Gallery(images);

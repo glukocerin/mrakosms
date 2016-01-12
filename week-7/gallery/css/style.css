@@ -26,7 +26,7 @@ h1 {
     -webkit-filter: grayscale(100%);
 }
 
-.preview .btn img{
+.preview img{
   max-height: 100%;
 
 }
