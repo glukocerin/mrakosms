@@ -13,7 +13,7 @@ function Controller (model, view) {
   }
 
   this.addTask = function () {
-    var newTask = document.querySelector(".new-task").value;
+    var newTask = document.querySelector('.new-task').value;
     if (newTask !== '') {
       _this.model.createTask(newTask, _this.view.addTask);
     }
@@ -36,6 +36,12 @@ function Controller (model, view) {
   }
 
   addButton.addEventListener('click', this.addTask);
+
+  document.querySelector('.new-task').addEventListener('keypress', function (e) {
+    if (e.keyCode == _this.ENTER_KEY) {
+        _this.addTask();
+    }
+  });
 
   container.addEventListener('click', function (event) {
     if (event.target.className === 'delete') {
