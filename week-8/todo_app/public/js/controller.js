@@ -7,6 +7,7 @@ function Controller (model, view) {
   this.ENTER_KEY = 13;
   var container = document.querySelector('.container');
   var addButton = document.querySelector('.add');
+  var clearButton = document.querySelector('.clear');
 
   this.showTasks = function () {
     this.model.getTasks(this.view.showTasks);
@@ -35,7 +36,16 @@ function Controller (model, view) {
     _this.model.deleteTask(id, _this.view.deleteTask);
   }
 
+  this.clearTasks = function () {
+    for (var i = 0; i < _this.view.completedTasks.children.length; i++) {
+      _this.deleteTask(_this.view.completedTasks.children[i].id)
+    }
+  }
+
+
+
   addButton.addEventListener('click', this.addTask);
+  clearButton.addEventListener('click', this.clearTasks);
 
   document.querySelector('.new-task').addEventListener('keypress', function (e) {
     if (e.keyCode == _this.ENTER_KEY) {
