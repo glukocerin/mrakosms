@@ -92,7 +92,7 @@ function CandiesGame(candiesPerLollipop, lollipopsPerSpeed, end) {
     }
   }
 
-  this.main = function() {
+  this.init = function() {
     document.querySelector('.candy').addEventListener('click', function() {
         _this.updatePageAfterCandies();
       });
@@ -107,7 +107,7 @@ function CandiesGame(candiesPerLollipop, lollipopsPerSpeed, end) {
   }
 }
 
-var game = new CandiesGame(5, 2, 10);
-game.main();
+var game = new CandiesGame(10, 10, 1000);
+game.init();
 
 
